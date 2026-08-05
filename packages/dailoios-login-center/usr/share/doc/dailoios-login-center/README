@@ -1,0 +1,20 @@
+DaiLoiOS Login Center 1.0.0
+
+Purpose
+- Centers the Slick Greeter login panel.
+- Keeps the current DaiLoiOS login wallpaper.
+- Keeps the existing theme, icons and other greeter settings.
+- Restores the original configuration when removed.
+
+Install
+  sudo apt install ./dailoios-login-center_1.0.0_all.deb
+
+Test
+  Log out, or restart LightDM:
+  sudo systemctl restart lightdm
+
+Warning
+  Restarting LightDM immediately closes the current desktop session.
+
+Restore
+  sudo apt remove dailoios-login-center

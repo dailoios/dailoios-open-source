@@ -1,0 +1,66 @@
+#!/bin/sh
+set -eu
+
+ACTION="${1:-install}"
+PKG="dailoios-login-center"
+CONF="/etc/lightdm/slick-greeter.conf"
+DIVERT="/etc/lightdm/slick-greeter.conf.dailoios-original"
+
+install_config() {
+    mkdir -p /etc/lightdm
+
+    if [ -e "$CONF" ] && [ ! -e "$DIVERT" ]; then
+        dpkg-divert --package "$PKG" \
+          --add --rename --divert "$DIVERT" "$CONF"
+    fi
+
+    if [ -e "$DIVERT" ]; then
+        cp -f "$DIVERT" "$CONF"
+    else
+        cat >"$CONF" <<'EOF'
+[Greeter]
+EOF
+    fi
+
+    # Ensure a [Greeter] section exists.
+    if ! grep -q '^[[:space:]]*\[Greeter\][[:space:]]*$' "$CONF"; then
+        printf '\n[Greeter]\n' >>"$CONF"
+    fi
+
+    # Remove any previous content-align entry, then add the DaiLoiOS value.
+    sed -i '/^[[:space:]]*content-align[[:space:]]*=/d' "$CONF"
+
+    # Insert directly after [Greeter] to keep the setting clear and predictable.
+    awk '
+        BEGIN {done=0}
+        {
+            print
+            if (!done && $0 ~ /^[[:space:]]*\[Greeter\][[:space:]]*$/) {
+                print "content-align=center"
+                done=1
+            }
+        }
+    ' "$CONF" >"${CONF}.tmp"
+
+    mv -f "${CONF}.tmp" "$CONF"
+    chmod 0644 "$CONF"
+}
+
+restore_config() {
+    rm -f "$CONF"
+
+    if dpkg-divert --list "$CONF" 2>/dev/null | grep -q .; then
+        dpkg-divert --package "$PKG" \
+          --remove --rename --divert "$DIVERT" "$CONF" || true
+    elif [ -e "$DIVERT" ]; then
+        mv -f "$DIVERT" "$CONF"
+    fi
+}
+
+case "$ACTION" in
+    install) install_config ;;
+    remove) restore_config ;;
+    *) echo "Usage: $0 {install|remove}" >&2; exit 2 ;;
+esac
+
+exit 0
