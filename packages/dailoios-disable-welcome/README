@@ -1,0 +1,7 @@
+DaiLoiOS Disable Welcome 1.0.1
+
+This package disables Linux Mint Welcome by placing a per-user autostart
+override in /etc/skel and in existing local user profiles.
+
+It intentionally does not replace /etc/xdg/autostart/mintwelcome.desktop,
+preventing file conflicts with the original Linux Mint package.
