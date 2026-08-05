@@ -1,0 +1,38 @@
+#!/bin/sh
+set -e
+
+make_override() {
+    home="$1"
+    owner="$2"
+    group="$3"
+
+    [ -d "$home" ] || return 0
+    mkdir -p "$home/.config/autostart"
+    cat > "$home/.config/autostart/mintwelcome.desktop" <<'DESKTOP'
+[Desktop Entry]
+Type=Application
+Name=Linux Mint Welcome
+Comment=Disabled by DaiLoiOS
+Exec=/bin/true
+Hidden=true
+NoDisplay=true
+X-GNOME-Autostart-enabled=false
+DESKTOP
+    chown "$owner:$group" "$home/.config/autostart/mintwelcome.desktop" 2>/dev/null || true
+}
+
+# Apply to normal existing local users.
+if command -v getent >/dev/null 2>&1; then
+    getent passwd | while IFS=: read -r user _ uid gid _ home shell; do
+        [ "$uid" -ge 1000 ] 2>/dev/null || continue
+        [ "$uid" -lt 65534 ] 2>/dev/null || continue
+        case "$shell" in
+            */nologin|*/false) continue ;;
+        esac
+        group="$(getent group "$gid" | cut -d: -f1)"
+        [ -n "$group" ] || group="$user"
+        make_override "$home" "$user" "$group"
+    done
+fi
+
+exit 0

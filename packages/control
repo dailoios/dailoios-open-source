@@ -1,0 +1,9 @@
+Package: dailoios-disable-welcome
+Version: 1.0.1
+Section: admin
+Priority: optional
+Architecture: all
+Maintainer: DaiLoiOS <support@dailoios.com>
+Description: Disable Linux Mint Welcome on DaiLoiOS
+ Prevents Linux Mint Welcome from starting automatically for existing users
+ and users created after DaiLoiOS installation.
