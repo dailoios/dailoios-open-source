@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+/usr/local/sbin/dailoios-login-center-control install
+exit 0

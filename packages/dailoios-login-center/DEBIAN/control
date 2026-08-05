@@ -1,1 +1,11 @@
-
+Package: dailoios-login-center
+Version: 1.0.0
+Section: admin
+Priority: optional
+Architecture: all
+Maintainer: DaiLoiOS <support@dailoios.com>
+Depends: dpkg, slick-greeter
+Description: Center the DaiLoiOS login panel
+ Configures Slick Greeter to place the login panel in the center of the screen
+ while preserving the existing DaiLoiOS wallpaper and other greeter settings.
+ Removing this package restores the previous configuration.
