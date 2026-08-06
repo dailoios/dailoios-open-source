@@ -1,4 +1,0 @@
-#!/bin/sh
-set -e
-# Keep the disabled preference when the package is removed.
-exit 0
