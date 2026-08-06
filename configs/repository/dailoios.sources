@@ -1,0 +1,6 @@
+Types: deb
+URIs: http://14.225.210.88:8081
+Suites: zena
+Components: main drivers fonts printer tools pro beta
+Architectures: amd64 all
+Trusted: yes
