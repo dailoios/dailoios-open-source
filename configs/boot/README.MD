@@ -12,7 +12,8 @@ từ theme Plymouth sử dụng trong Linux Mint.
 ## Thành phần
 
 - `plymouth/mint-logo/`: theme Plymouth đã được DaiLoiOS tùy chỉnh.
-- Các file `animation-XXXX.png`: khung hình sử dụng cho hiệu ứng khởi động.
+
+- Các file `throbber-XXXX.png`: khung hình sử dụng cho hiệu ứng khởi động.
 - File `.plymouth` và `.script`: cấu hình và kịch bản hiển thị theme.
 
 ## Nguồn gốc
