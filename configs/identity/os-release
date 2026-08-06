@@ -1,0 +1,13 @@
+NAME="DaiLoiOS"
+VERSION="1.0"
+ID=dailoios
+ID_LIKE="linuxmint ubuntu debian"
+PRETTY_NAME="DaiLoiOS 1.0"
+VERSION_ID="1.0"
+VERSION_CODENAME=zena
+UBUNTU_CODENAME=noble
+HOME_URL="https://dailoios.com"
+SUPPORT_URL="https://dailoios.com/ho-tro"
+BUG_REPORT_URL="https://dailoios.com/bao-loi"
+PRIVACY_POLICY_URL="https://dailoios.com/chinh-sach-bao-mat"
+LOGO=dailoios
