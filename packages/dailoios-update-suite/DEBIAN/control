@@ -1,0 +1,13 @@
+Package: dailoios-update-suite
+Version: 1.0.1
+Section: admin
+Priority: optional
+Architecture: all
+Maintainer: DaiLoiOS <support@dailoios.com>
+Depends: python3, python3-gi, gir1.2-gtk-3.0, dpkg, dailoios-center (>= 1.1.2)
+Conflicts: dailoios-disable-mintupdate, dailoios-update-replacement, dailoios-update-notifier
+Replaces: dailoios-disable-mintupdate, dailoios-update-replacement, dailoios-update-notifier
+Description: Complete DaiLoiOS update tray and notifier
+ Disables all known Linux Mint Update Manager autostart entries,
+ replaces Mint menu launchers with DaiLoi System Update,
+ and provides a DaiLoiOS tray icon and update notifications.

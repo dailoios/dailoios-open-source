@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+/usr/local/sbin/dailoios-update-suite-control install
+exit 0
