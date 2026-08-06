@@ -1,0 +1,12 @@
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena main
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena beta
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena printer
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena fonts
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena pro
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena drivers
+deb [trusted=yes arch=amd64] http://14.225.210.88:8081 zena tools
+deb http://packages.linuxmint.com zena main upstream import backport #id:linuxmint_main
+deb http://archive.ubuntu.com/ubuntu noble main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu noble-updates main restricted universe multiverse
+deb http://archive.ubuntu.com/ubuntu noble-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ noble-security main restricted universe multiverse
