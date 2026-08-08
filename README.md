@@ -55,7 +55,6 @@ https://dailoios.com
 Người dùng có thể sử dụng mục Issues trên GitHub để báo lỗi hoặc đề
 xuất cải tiến.
 
-Vui lòng đọc `CONTRIBUTING.md` trước khi gửi đóng góp.
 
 ## Đơn vị phát triển
 
