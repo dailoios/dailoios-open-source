@@ -1,9 +1,0 @@
-dailoios-account	1.2.1
-dailoios-app-store	1.1.2
-dailoios-center	1.1.2
-dailoios-core	1.0.0
-dailoios-disable-welcome	1.0.1
-dailoios-login-center	1.0.0
-dailoios-release	1.0.0
-dailoios-repo-config	1.0.0
-dailoios-update-suite	1.0.1
